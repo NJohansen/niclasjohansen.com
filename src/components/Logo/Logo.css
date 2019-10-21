@@ -1,0 +1,32 @@
+@import '../../variables.css';
+
+.logo {
+  min-width: 20px;
+  min-height: 25px;
+  display: inline-block;
+  padding: 20px 0;
+}
+
+.logo svg {
+  transform: rotate(45deg) translateY(-10px);
+  transform-origin: center;
+  vertical-align: middle;
+}
+
+.logo span {
+  margin: 0px calc(var(--spacing) / 2);
+  font-weight: 500;
+}
+
+.logo .primary { fill: var(--primary); }
+.logo .primary-light { fill: var(--primary-light); }
+.logo .info { fill: var(--info); }
+.logo .info-light { fill: var(--info-light); }
+.logo .danger { fill: var(--danger); }
+.logo .danger-light { fill: var(--danger-light); }
+.logo .dark { fill: var(--dark); }
+.logo .dark-light { fill: var(--dark-light); }
+.logo .grey { fill: var(--grey); }
+.logo .grey-light { fill: var(--grey-light); }
+.logo .white { fill: var(--white); }
+.logo .white-light { fill: var(--white-light); }

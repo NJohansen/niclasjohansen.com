@@ -1,0 +1,6 @@
+@import '../../variables.css';
+
+main{
+    flex-grow: 1;
+    display: block;
+}

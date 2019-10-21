@@ -8,6 +8,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+*,::after,::before {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

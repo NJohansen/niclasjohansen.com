@@ -1,0 +1,82 @@
+@import '../../variables.css';
+
+.imageWidget{
+  left: 605px;
+  top: 0px;
+  width: 972px;
+  height: 972px;
+  z-index: 130;
+  position: absolute;
+}
+
+.imageWidget.version2 {
+  top: -370px;
+  width: 972px;
+  height: 972px;
+  z-index: 130;
+  position: absolute;
+  left: -1150px;
+}
+
+.headerImage{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.headerImg{
+  width: 200%;
+  position: relative;
+}
+
+.splashHeader{
+  padding-top: 175px;
+  text-align: left;
+  width: 90vw;
+  max-width: 800px;
+  margin: 0px auto;
+  color: rgb(31, 55, 129);
+  font-size: 60px;
+  font-weight: 800;
+  letter-spacing: -1.9px;
+  font-style: normal;
+}
+
+.splashHeader h1{
+  margin-bottom: 2px;
+}
+
+.splashDescription{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  max-width: 600px;
+  text-align: left;
+  margin: 0px auto;
+  color: var(--primary-dark);
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0px auto;
+  width: 95%;
+}
+
+.half:first-child{
+  margin-right: 40px;
+}
+
+.half{
+  max-width: 700px;
+  flex-grow: 1;
+  flex-basis: 0px;
+  padding: 20px;
+}
+
+.halfContent{
+  width:100%;
+}
