@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Blog.css';
 import Section from '../../components/Section/Section';
-import Post from '../../components/Post';
 
 
 export default class Blog extends Component {
@@ -10,12 +9,14 @@ export default class Blog extends Component {
   }
 
   componentDidMount(){
-    
+    this.fetchPosts()
   }
 
   async fetchPosts(){
-    const res = await fetch('/blog/posts.json')
+    const res = await fetch('http://localhost:8080/blog/posts.json')
     const posts = await res.json()
+
+    console.log(posts)
 
     localStorage.setItem('posts', JSON.stringify(posts))
 
@@ -30,7 +31,7 @@ export default class Blog extends Component {
     return (
       <div>
         <section className='blog-heading'>
-          <h1>Posts</h1>
+        <Section headertext='Posts'/>
         </section>
         <section className='blog-section'>
           <div className='blog'>
@@ -56,7 +57,6 @@ export default class Blog extends Component {
             <div>
               <h1>{title}</h1>
               <h2 class='subject'>{description}</h2>
-              <Post/>
             </div>
           </section>
         </header>

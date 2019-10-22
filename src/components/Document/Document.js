@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Post.css';
+import './Document.css';
 import camelcase from 'camelcase';
 import Markdown from '../Markdown';
 

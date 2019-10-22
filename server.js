@@ -4,8 +4,9 @@ const path = require('path');
 const app = express();
 const fs = require('fs')
 const CACHE = path.resolve(__dirname, 'cache')
+const cors = require('cors')
 
-
+app.use(cors())
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/ping', function (req, res) {
@@ -17,7 +18,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/blog/posts.json', (req, res) => {
-    const POST_PATH = path.resolve(__dirname, 'static/docs')
+    const POST_PATH = path.resolve(__dirname, 'static/posts')
     const posts = fs.readdirSync(POST_PATH)
     const result = []
 
