@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Post.css';
 import camelcase from 'camelcase';
+import Markdown from '../Markdown';
 
 export default class Post extends Component{
     state = {
@@ -76,7 +77,7 @@ export default class Post extends Component{
     
         return (
           <section class='text'>
-            <div>Test</div>
+            <Markdown text={text} />
           </section>
         )
       }
