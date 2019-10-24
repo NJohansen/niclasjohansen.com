@@ -4,13 +4,17 @@ const path = require('path');
 const app = express();
 const fs = require('fs')
 const CACHE = path.resolve(__dirname, 'cache')
-const cors = require('cors')
 
-app.use(cors())
-app.use(express.static(path.join(__dirname, 'build')));
+// Port
+const port = 5000
 
-app.get('/ping', function (req, res) {
- return res.send('pong');
+//app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/api/posts', (req, res) => {
+    const posts = [{
+        id: 1, name: 'John', lastname: 'Doe'
+    }]
+    res.json(posts)
 });
 
 app.get('/', function (req, res) {
@@ -18,7 +22,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/blog/posts.json', (req, res) => {
-    const POST_PATH = path.resolve(__dirname, 'static/posts')
+    const POST_PATH = path.resolve(__dirname, 'client/static/posts')
     const posts = fs.readdirSync(POST_PATH)
     const result = []
 
@@ -77,4 +81,4 @@ app.get('*', (req, res) => {
     )
 })
 
-app.listen(process.env.PORT || 8080);
+app.listen(port, () => console.log(`Server is running on port ${port}`));
