@@ -4,8 +4,11 @@ import Section from '../../components/Section/Section';
 
 
 export default class Blog extends Component {
-  state = {
-    posts: JSON.parse(localStorage.getItem('posts')) || [] 
+  constructor(props){
+    super(props)
+    this.state = {
+      posts: JSON.parse(localStorage.getItem('posts')) || [] 
+    }
   }
 
   componentDidMount(){
@@ -15,19 +18,17 @@ export default class Blog extends Component {
   async fetchPosts(){
     const res = await fetch('/blog/posts.json')
     const posts = await res.json()
-
     console.log(posts)
-
     localStorage.setItem('posts', JSON.stringify(posts))
-
+    
     this.setState({
       posts: [...posts]
     }, this.initColumn)
   }
 
   render () {
-    const { posts } = this.state
-
+    const posts  = this.state.posts
+    
     return (
       <div>
         <section className='blog-heading'>
@@ -56,7 +57,7 @@ export default class Blog extends Component {
           <section>
             <div>
               <h1>{title}</h1>
-              <h2 class='subject'>{description}</h2>
+              <h2 className='subject'>{description}</h2>
             </div>
           </section>
         </header>

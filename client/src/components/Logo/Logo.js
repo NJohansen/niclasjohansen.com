@@ -1,8 +1,10 @@
 import './Logo.css';
 import React from 'react';
 
-export default ({ link, width, height}) => (
+const path = require('path');
+
+export default ({ width, height}) => (
   <div className='logo'>
-    <img src="./logo.png" alt="Logo" height={height} width={width}></img>
+    <img src={path.resolve(__dirname, 'logo.png')} alt="Niclas Johansen" height={height} width={width}></img>
   </div>
 )

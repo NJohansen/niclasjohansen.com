@@ -42,7 +42,7 @@ export default class Document extends Component{
 
     render ({ path }, { header, text }) {
         return (
-          <div class={`post ${text === '' ? 'loading' : ''}`}>
+          <div className={`post ${text === '' ? 'loading' : ''}`}>
             {this.renderHeader(window.__postHeader || header)}
             {this.renderContent(text)}
           </div>
@@ -63,7 +63,7 @@ export default class Document extends Component{
                 <header style={style}>
                     <section>
                         <h1>{title}</h1>
-                        <h2 class='subject'>{description}</h2>
+                        <h2 className='subject'>{description}</h2>
                     </section>
                 </header>
           </div>
@@ -72,11 +72,11 @@ export default class Document extends Component{
 
       renderContent (text) {
         if (text === '') {
-          return <div class='loading'><i class='fas fa-circle-notch fa-spin' /></div>
+          return <div className='loading'><i className='fas fa-circle-notch fa-spin' /></div>
         }
     
         return (
-          <section class='text'>
+          <section className='text'>
             <Markdown text={text} />
           </section>
         )
