@@ -6,6 +6,10 @@
 .pnp.js
 .vscode
 
+# client
+./client/node_modules
+./client/public
+
 # testing
 /coverage
 
