@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './Blog.css';
-import Section from '../../components/Section/Section';
-
 
 export default class Blog extends Component {
   constructor(props){
@@ -16,9 +14,12 @@ export default class Blog extends Component {
   }
 
   async fetchPosts(){
+    console.log('hey')
     const res = await fetch('/blog/posts.json')
     const posts = await res.json()
-    console.log(posts)
+
+    console.log(JSON.stringify(posts));
+
     localStorage.setItem('posts', JSON.stringify(posts))
     
     this.setState({
@@ -32,7 +33,6 @@ export default class Blog extends Component {
     return (
       <div>
         <section className='blog-heading'>
-        <Section headertext='Posts'/>
         </section>
         <section className='blog-section'>
           <div className='blog'>
@@ -49,10 +49,10 @@ export default class Blog extends Component {
       background: coverColor
     }
 
-    const classes = ['post'].join(' ')
+    //const classes = ['post'].join(' ')
 
     return (
-      <div id={id} key={id} className={classes}>
+      <div id={id} key={id} >
         <header style={style}>
           <section>
             <div>

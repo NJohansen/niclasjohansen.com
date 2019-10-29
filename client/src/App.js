@@ -21,7 +21,6 @@ class App extends Component {
             <Route path="/blog" component={Blog}/>
             <Route path="/about" component={About}/>
             <Route path="/blog/:year/:month/:day/:post" component={Post}/>
-            
           </Switch>
         </div>
       </BrowserRouter>
