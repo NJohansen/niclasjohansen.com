@@ -42,11 +42,10 @@ export default () => (
         <NavLink to="/"><Logo height="70" /></NavLink>
         <div className='navPages'>
           {renderMenuItem('/portfolio', 'Portfolio')}
-          {renderMenuItem('/blog', 'Blog')}
           {renderMenuItem('/about', 'About me')}
         </div>
         <span className='infoText'><a href='mailto:nj@morningtrain.dk'>nj@morningtrain.dk</a></span>
-        {renderActions('/projects', 'Kontakt')}
+        {renderActions('/projects', 'Contact')}
       </div>
     </div>
   </div>

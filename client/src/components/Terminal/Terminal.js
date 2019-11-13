@@ -30,10 +30,10 @@ export default class Terminal extends Component {
   }
 
   renderTerminalOutput = () => {
-    return this.state.history.slice(0).reverse().map(t => (
+    return this.state.history.slice(0).reverse().map((t, index) => (
       <React.Fragment>
         <div key='uniq'>{t}</div>
-        <div>{this.state.lastTermMessage}</div>
+        <div>{this.state.lastTermMessage[index]}</div>
         <div className="codeComment"><b>Johansen:</b> ~/Code/Website (Master)</div>
       </React.Fragment>
     ))
@@ -64,12 +64,12 @@ export default class Terminal extends Component {
     
     if(!answer){
       this.setState({
-        lastTermMessage: `-bash: ${this.state.cmd}: command not found`, 
+        lastTermMessage: [...this.state.lastTermMessage, `-bash: ${this.state.cmd}: command not found`], 
         termMessage: ''
       })
     } else{
       this.setState({ 
-        lastTermMessage: answer, 
+        lastTermMessage: [...this.state.lastTermMessage, answer], 
         termMessage: ''
       })
     }

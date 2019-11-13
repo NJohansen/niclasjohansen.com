@@ -7,8 +7,8 @@
 .vscode
 
 # client
-./client/node_modules
-./client/public
+client/node_modules
+client/public
 
 # testing
 /coverage

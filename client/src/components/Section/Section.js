@@ -2,7 +2,7 @@ import './Section.css';
 import React from 'react';
 import shape from '../../assets/images/shape.svg';
 
-export default ({ headertext, half}) => (
+export default ({ headertext, description, half}) => (
     <div className='splashContainer'>
       <div className='imageWidget version2'>
         <div className='headerImage'>
@@ -21,6 +21,6 @@ export default ({ headertext, half}) => (
       <div className='splashHeader'>
         <h1>{headertext}</h1>
       </div>
-      <div className="splashDescription"></div>
+      <div className="splashDescription"><span>{description}</span></div>
     </div>
 )

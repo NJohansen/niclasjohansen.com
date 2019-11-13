@@ -8,9 +8,12 @@ export default class Blog extends Component {
       posts: JSON.parse(localStorage.getItem('posts')) || [] 
     }
   }
+  UNSAFE_componentWillMount(){
+    this.fetchPosts()
+  }
 
   componentDidMount(){
-    this.fetchPosts()
+    //this.fetchPosts()
   }
 
   async fetchPosts(){
